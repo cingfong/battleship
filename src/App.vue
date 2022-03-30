@@ -1,21 +1,51 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<template>
+  <div class="flex justify-center items-center h-[100vh]">
+    <button class="bg-amber-600 h-16 w-48">Save Changes</button>
+    <div class="backgroundImage -z-10 fixed"></div>
+    <h1>{{ t("language") }}</h1>
+  </div>
+</template>
+<script>
+import { useI18n } from "vue-i18n";
+
+export default {
+  name: "App",
+  setup() {
+    const { locale, t } = useI18n({
+      inheritLocale: true,
+    });
+    return { locale, t };
+  },
+};
 </script>
 
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-</template>
+<i18n>
+{
+  "en": {
+    "language": "Language",
+    "hello": "hello, world!"
+  },
+  "ja": {
+    "language": "言語",
+    "hello": "こんにちは、世界！"
+  }
+}
+</i18n>
 
 <style>
+body {
+  margin: 0px;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+}
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/background.webp");
+  min-height: 100vh;
+  min-width: 100vh;
+  background-repeat: no-repeat;
 }
 </style>
