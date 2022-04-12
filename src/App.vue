@@ -1,10 +1,8 @@
 <template>
   <div>
+    <navbar />
     <div class="flex justify-center items-center h-[100vh]">
       <!-- <div class="backgroundImage -z-10 fixed"></div> -->
-      <router-link to="/game" class="bg-amber-600 h-16 w-48">{{
-        t("start")
-      }}</router-link>
       <router-view />
     </div>
   </div>
@@ -12,8 +10,12 @@
 <script>
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
+import navbar from "./components/utils/navbar.vue";
 export default {
   name: "App",
+  components: {
+    navbar,
+  },
   setup() {
     const router = useRouter();
     const { locale, t } = useI18n({

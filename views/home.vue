@@ -1,5 +1,10 @@
 <template>
   <div>
+    <router-link
+      to="/game"
+      class="bg-amber-600 h-16 w-48 flex justify-center items-center"
+      >{{ t("start") }}</router-link
+    >
   </div>
 </template>
 
