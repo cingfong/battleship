@@ -12,7 +12,7 @@
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
 export default {
-  name: "App",
+  name: "Home",
   setup() {
     const router = useRouter();
     const { locale, t } = useI18n({
