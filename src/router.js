@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Home from "../views/home.vue";
-import About from "../views/about.vue";
-import SelectPage from "../views/selectPage.vue";
-import Game from "../views/game.vue";
+import Home from "./views/home.vue";
+import About from "./views/about.vue";
+import SelectPage from "./views/selectPage.vue";
+import Game from "./views/game.vue";
 
 const routes = [
   { path: "/", component: Home },
   { path: "/about", component: About },
-  { path: "/game", component: Game },
+  { path: "/game", name: "Game", component: Game },
   { path: "/select", component: SelectPage },
 ];
 const router = createRouter({

@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar />
-    <div class="flex justify-center items-center h-[100vh] min-w-full">
+    <div class="flex justify-center items-center h-[100vh]">
       <!-- <div class="backgroundImage -z-10 fixed"></div> -->
       <router-view />
     </div>
